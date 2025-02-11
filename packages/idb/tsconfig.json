@@ -1,0 +1,10 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    "jsx": "react-jsx"
+  },
+  "include": ["src", "instant.schema.ts", "instant.perms.ts"],
+  "exclude": ["node_modules", "dist"]
+}

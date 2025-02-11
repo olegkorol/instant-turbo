@@ -2,6 +2,16 @@
 
 This Turborepo starter is maintained by the Turborepo core team.
 
+## Roadmap
+
+- [x] Add instantDB to the monorepo (simplest way possible)
+  - [ ] Add simple todo-list example
+  - [ ] Expose an admin instantDB instance for server-side actions / api routes
+  - [ ] Ensure type-safety across frontend and backend
+- [ ] Add TailwindCSS to the Next.js apps
+- [ ] Create turbo generators for new apps and packages
+- [ ] etc.
+
 ## Using this example
 
 Run the following command:

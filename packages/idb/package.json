@@ -1,0 +1,30 @@
+{
+  "name": "@repo/idb",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "exports": {
+    "./db": {
+      "types": "./dist/src/db.d.ts",
+      "default": "./dist/src/db.js"
+    },
+    "./instant.schema": {
+      "types": "./dist/instant.schema.d.ts",
+      "default": "./dist/instant.schema.js"
+    },
+    "./instant.perms": {
+      "types": "./dist/instant.perms.d.ts",
+      "default": "./dist/instant.perms.js"
+    }
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^22.13.1",
+    "typescript": "latest"
+  },
+  "dependencies": {
+    "@instantdb/react": "^0.17.12"
+  }
+}
