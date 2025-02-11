@@ -8,7 +8,7 @@ import onlyWarn from "eslint-plugin-only-warn";
  * A shared ESLint configuration for the repository.
  *
  * @type {import("eslint").Linter.Config}
- * */
+ */
 export const config = [
   js.configs.recommended,
   eslintConfigPrettier,
@@ -25,8 +25,24 @@ export const config = [
     plugins: {
       onlyWarn,
     },
+    rules: {
+      "@typescript-eslint/no-unused-vars": ["warn", {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+      }],
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-empty-interface": "warn",
+      "no-console": ["warn", { allow: ["warn", "error"] }],
+    },
   },
   {
-    ignores: ["dist/**"],
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/.next/**",
+      "**/.turbo/**",
+      "**/coverage/**",
+    ],
   },
 ];
