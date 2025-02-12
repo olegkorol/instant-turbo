@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
-import { db, type User } from "@repo/idb/db";
+import { db } from "@repo/idb/client";
+import type { User } from "@repo/idb/types";
 import { redirect } from "next/navigation";
 
 function Dashboard() {
   const { isLoading, user, error } = db.useAuth();
 
   if (isLoading) {
-    return;
+    return <div className="p-4 text-gray-500">Loading...</div>;
   }
 
   if (error) {
@@ -19,6 +19,7 @@ function Dashboard() {
     // The user is logged in! Let's load the `Main`
     return <Main user={user} />;
   }
+
   // The use isn't logged in yet. Let's show them the `Login` component
   return redirect("/login");
 }

@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { db } from "@repo/idb/db";
+import { db } from "@repo/idb/client";
 import { redirect } from "next/navigation";
 
 function LoginPage() {
   const { isLoading, user, error } = db.useAuth();
 
   if (isLoading) {
-    return;
+    return <div className="p-4 text-gray-500">Loading...</div>;
   }
 
   if (error) {
@@ -57,10 +57,10 @@ function EmailStep({ onSendEmail }: { onSendEmail: (email: string) => void }) {
       onSubmit={handleSubmit}
       className="flex flex-col space-y-4"
     >
-      <h2 className="text-xl font-bold">Let's log you in</h2>
+      <h2 className="text-xl font-bold">Let&apos;s log you in</h2>
       <p className="text-gray-700">
-        Enter your email, and we'll send you a verification code. We'll create
-        an account for you too if you don't already have one.
+        Enter your email, and we&apos;ll send you a verification code. We&apos;ll create
+        an account for you too if you don&apos;t already have one.
       </p>
       <input
         ref={inputRef}
