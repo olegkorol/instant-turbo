@@ -9,9 +9,9 @@ if (!INSTANT_APP_ID) {
   console.warn('INSTANT_APP_ID is not set')
 }
 
-export const db = init({ 
-  appId: INSTANT_APP_ID || 'development', 
-  schema 
+export const db = init({
+  appId: INSTANT_APP_ID || 'development',
+  schema
 })
 
 export type { User };
