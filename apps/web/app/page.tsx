@@ -12,9 +12,23 @@ export default function Home() {
           Get started by editing this page in <code>apps/web/app/page.tsx</code>.
         </p>
         <div className="flex gap-4 justify-center mb-8">
-          <Link href="/dashboard" className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
-            Dashboard
-          </Link>
+          <div className="flex flex-col gap-2">
+            <p>
+              The <code>/dashboard</code> page shows how a basic protected page could work.
+            </p>
+            <Link href="/dashboard" className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
+              Dashboard
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <p>
+              The <code>/server-example</code> page shows how to use the server-side InstantDB client.
+            </p>
+            <Link href="/server-example" className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
+              Server Example
+            </Link>
+          </div>
         </div>
         <div className="flex gap-4 justify-center">
           <a

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { db } from "@repo/idb/client";
 import { redirect } from "next/navigation";
+import { ButtonBack } from "@repo/ui/button-back";
 
 function LoginPage() {
   const { isLoading, user, error } = db.useAuth();
@@ -27,15 +28,16 @@ function Login() {
   const [sentEmail, setSentEmail] = useState("");
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="max-w-sm">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-background p-24">
+      <div className="max-w-sm w-full">
+        <ButtonBack />
         {!sentEmail ? (
           <EmailStep onSendEmail={setSentEmail} />
         ) : (
           <CodeStep sentEmail={sentEmail} />
         )}
       </div>
-    </div>
+    </main>
   );
 }
 
