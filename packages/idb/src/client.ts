@@ -13,3 +13,5 @@ export const db = init({
   appId: INSTANT_APP_ID || 'development',
   schema
 })
+
+export { id } from "@instantdb/react";

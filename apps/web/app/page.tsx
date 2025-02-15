@@ -14,7 +14,7 @@ export default function Home() {
         <div className="flex gap-4 justify-center mb-8">
           <div className="flex flex-col gap-2">
             <p>
-              The <code>/dashboard</code> page shows how a basic protected page could work.
+              <code>/dashboard</code> is a protected page, where a user can manage a todo list after logging in.
             </p>
             <Link href="/dashboard" className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
               Dashboard
@@ -23,7 +23,7 @@ export default function Home() {
 
           <div className="flex flex-col gap-2">
             <p>
-              The <code>/server-example</code> page shows how to use the server-side InstantDB client.
+              The <code>/server-example</code> page shows how to use a server-side InstantDB client.
             </p>
             <Link href="/server-example" className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
               Server Example
