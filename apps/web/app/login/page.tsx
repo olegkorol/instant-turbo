@@ -61,8 +61,9 @@ function EmailStep({ onSendEmail }: { onSendEmail: (email: string) => void }) {
     >
       <h2 className="text-xl font-bold">Let&apos;s log you in</h2>
       <p className="text-gray-700">
-        Enter your email, and we&apos;ll send you a verification code. We&apos;ll create
-        an account for you too if you don&apos;t already have one.
+        Enter your email, and we&apos;ll send you a verification code.
+        We&apos;ll create an account for you too if you don&apos;t already have
+        one.
       </p>
       <input
         ref={inputRef}

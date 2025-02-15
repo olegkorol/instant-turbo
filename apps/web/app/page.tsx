@@ -8,24 +8,33 @@ export default function Home() {
           Welcome to Your Next.js App
         </h1>
         <p className="text-lg text-muted-foreground mb-8">
-          This is a starter template built with Turborepo, Next.js, and InstantDB.
-          Get started by editing this page in <code>apps/web/app/page.tsx</code>.
+          This is a starter template built with Turborepo, Next.js, and
+          InstantDB. Get started by editing this page in{" "}
+          <code>apps/web/app/page.tsx</code>.
         </p>
         <div className="flex gap-4 justify-center mb-8">
           <div className="flex flex-col gap-2">
             <p>
-              <code>/dashboard</code> is a protected page, where a user can manage a todo list after logging in.
+              <code>/dashboard</code> is a protected page, where a user can
+              manage a todo list after logging in.
             </p>
-            <Link href="/dashboard" className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
+            <Link
+              href="/dashboard"
+              className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+            >
               Dashboard
             </Link>
           </div>
 
           <div className="flex flex-col gap-2">
             <p>
-              The <code>/server-example</code> page shows how to use a server-side InstantDB client.
+              The <code>/server-example</code> page shows how to use a
+              server-side InstantDB client.
             </p>
-            <Link href="/server-example" className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
+            <Link
+              href="/server-example"
+              className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+            >
               Server Example
             </Link>
           </div>
@@ -58,5 +67,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-  )
+  );
 }

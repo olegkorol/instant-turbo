@@ -1,53 +1,53 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { getAllTodos, getTodosAsUser } from '../actions'
-import type { Todo, $User } from '@repo/idb/types'
-import { ButtonBack } from '@repo/ui/button-back'
+import { useState } from "react";
+import { getAllTodos, getTodosAsUser } from "../actions";
+import type { Todo, $User } from "@repo/idb/types";
+import { ButtonBack } from "@repo/ui/button-back";
 
-type TodoWithOwner = Todo & { owner: $User | undefined }
+type TodoWithOwner = Todo & { owner: $User | undefined };
 
 export default function ServerExamplePage() {
-  const [impersonateAs, setImpersonateAs] = useState('')
-  const [todos, setTodos] = useState<TodoWithOwner[]>([])
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [impersonateAs, setImpersonateAs] = useState("");
+  const [todos, setTodos] = useState<TodoWithOwner[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleGetAllTodos = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setLoading(true)
-    setError(null)
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
     try {
-      const allTodos = await getAllTodos()
-      setTodos(allTodos)
+      const allTodos = await getAllTodos();
+      setTodos(allTodos);
     } catch (err) {
       if (err instanceof Error) {
-        setError(err.message)
+        setError(err.message);
       } else {
-        setError('An unknown error occurred')
+        setError("An unknown error occurred");
       }
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleGetTodosAsUser = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setLoading(true)
-    setError(null)
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
     try {
-      const userTodos = await getTodosAsUser({ impersonateAs })
-      setTodos(userTodos)
+      const userTodos = await getTodosAsUser({ impersonateAs });
+      setTodos(userTodos);
     } catch (err) {
       if (err instanceof Error) {
-        setError(err.message)
+        setError(err.message);
       } else {
-        setError('An unknown error occurred')
+        setError("An unknown error occurred");
       }
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-background p-24">
@@ -63,7 +63,7 @@ export default function ServerExamplePage() {
             disabled={loading}
             className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400 w-full"
           >
-            {loading ? 'Fetching...' : 'Fetch All Todos'}
+            {loading ? "Fetching..." : "Fetch All Todos"}
           </button>
         </form>
 
@@ -84,7 +84,7 @@ export default function ServerExamplePage() {
             disabled={loading}
             className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400 w-full"
           >
-            {loading ? 'Fetching...' : 'Fetch All Todos (impersonated)'}
+            {loading ? "Fetching..." : "Fetch All Todos (impersonated)"}
           </button>
         </form>
 
@@ -106,7 +106,7 @@ export default function ServerExamplePage() {
                     )}
                     {todo.owner && (
                       <span className="text-xs text-gray-400 ml-2">
-                        owner: {todo.owner.id?.slice(0, 8) + '...'}
+                        owner: {todo.owner.id?.slice(0, 8) + "..."}
                       </span>
                     )}
                   </div>
@@ -117,5 +117,5 @@ export default function ServerExamplePage() {
         )}
       </div>
     </main>
-  )
+  );
 }

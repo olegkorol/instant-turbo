@@ -15,9 +15,9 @@ const _schema = i.schema({
   // https://www.instantdb.com/docs/modeling-data#3-links
   links: {
     todoOwner: {
-      forward: { on: 'todos', has: 'one', label: 'owner', onDelete: 'cascade' },
-      reverse: { on: '$users', has: 'many', label: 'ownedTodos' },
-    }
+      forward: { on: "todos", has: "one", label: "owner", onDelete: "cascade" },
+      reverse: { on: "$users", has: "many", label: "ownedTodos" },
+    },
   },
   // If you use presence, you can define a room schema here
   // https://www.instantdb.com/docs/presence-and-topics#typesafety
@@ -26,7 +26,7 @@ const _schema = i.schema({
 
 // This helps Typescript display nicer intellisense
 type _AppSchema = typeof _schema;
-interface AppSchema extends _AppSchema { }
+interface AppSchema extends _AppSchema {}
 const schema: AppSchema = _schema;
 
 export type { AppSchema };

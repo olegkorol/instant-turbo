@@ -1,5 +1,3 @@
-
-
 export function ButtonBack() {
   return (
     <button
@@ -22,6 +20,5 @@ export function ButtonBack() {
       </svg>
       Back
     </button>
-  )
+  );
 }
-

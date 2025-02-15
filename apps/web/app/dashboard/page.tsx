@@ -11,7 +11,7 @@ function Dashboard() {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
-  const { todos } = data as { todos: Todo[] }
+  const { todos } = data as { todos: Todo[] };
   return (
     <div className="font-mono min-h-screen flex justify-center items-center flex-col space-y-4">
       <div className="max-w-sm w-full space-y-4 mb-4">
@@ -41,19 +41,17 @@ function Dashboard() {
 // Write Data
 // ---------
 function addTodo(text: string, owner: User) {
-  const todoId = id()
-  const ownerId = owner.id
+  const todoId = id();
+  const ownerId = owner.id;
 
   db.transact(
-    db.tx.todos[todoId]!
-      .update({
-        text,
-        done: false,
-        createdAt: Date.now(),
-      })
-      .link({
-        owner: ownerId,
-      })
+    db.tx.todos[todoId]!.update({
+      text,
+      done: false,
+      createdAt: Date.now(),
+    }).link({
+      owner: ownerId,
+    }),
   );
 }
 
@@ -74,10 +72,9 @@ function deleteCompleted(todos: Todo[]) {
 function toggleAll(todos: Todo[]) {
   const newVal = !todos.every((todo) => todo.done);
   db.transact(
-    todos.map((todo) => db.tx.todos[todo.id]!.update({ done: newVal }))
+    todos.map((todo) => db.tx.todos[todo.id]!.update({ done: newVal })),
   );
 }
-
 
 // Components
 // ----------
@@ -94,7 +91,7 @@ function ChevronDownIcon() {
   );
 }
 
-function TodoForm({ todos, user }: { todos: Todo[], user: User }) {
+function TodoForm({ todos, user }: { todos: Todo[]; user: User }) {
   return (
     <div className="flex items-center h-10 border-b border-gray-300">
       <button
@@ -156,9 +153,8 @@ function TodoList({ todos }: { todos: Todo[] }) {
               X
             </button>
           </div>
-        )
-      }
-      )}
+        );
+      })}
     </div>
   );
 }
