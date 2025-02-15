@@ -32,6 +32,12 @@
       "dependsOn": [
         "^build"
       ]
+    },
+    "push:perms": {
+      "cache": false
+    },
+    "push:schema": {
+      "cache": false
     }
   }
 }

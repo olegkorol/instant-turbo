@@ -3,7 +3,9 @@
   "type": "module",
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "push:perms": "pnpm dlx instant-cli@latest push perms -y",
+    "push:schema": "pnpm dlx instant-cli@latest push schema -y"
   },
   "exports": {
     "./client": {

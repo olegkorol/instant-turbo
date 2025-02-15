@@ -3,11 +3,14 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "check-types": "turbo run check-types",
     "clean": "git clean -xdf node_modules",
     "clean:workspaces": "turbo run clean",
     "dev": "turbo watch dev --continue --filter='./apps/*'",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "push:schema": "turbo push:schema --filter=@repo/idb",
+    "push:perms": "turbo push:perms --filter=@repo/idb"
   },
   "devDependencies": {
     "prettier": "^3.5.0",
