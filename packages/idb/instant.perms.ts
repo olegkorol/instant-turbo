@@ -3,13 +3,6 @@
 import type { InstantRules } from "@instantdb/react";
 
 const rules = {
-  $default: {
-    allow: {
-      view: "false",
-      update: "false",
-      delete: "false",
-    },
-  },
   todos: {
     allow: {
       view: "isOwner",
