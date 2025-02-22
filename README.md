@@ -5,7 +5,7 @@ A starter Turborepo with two apps:
 - Web: [Next.js](https://nextjs.org/)
 - Mobile: **WIP** [React Native](https://reactnative.dev/) with [Expo](https://expo.dev/)
 
-It uses [TailwindCSS](https://tailwindcss.com/) for styling and [InstantDB](https://www.instantdb.com/) as a local-first, reactive database.
+It uses [TailwindCSS v4](https://tailwindcss.com/) for styling and [InstantDB](https://www.instantdb.com/) as a local-first, reactive database.
 
 ## Quickstart
 

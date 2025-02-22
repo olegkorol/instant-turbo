@@ -4,6 +4,7 @@ import { useState } from "react";
 import { getAllTodos, getTodosAsUser } from "../actions";
 import type { Todo, $User } from "@repo/idb/types";
 import { ButtonBack } from "@repo/ui/button-back";
+import { Button } from "@/components/ui/button";
 
 type TodoWithOwner = Todo & { owner: $User | undefined };
 
@@ -58,13 +59,13 @@ export default function ServerExamplePage() {
           This query uses the admin SDK to access all todos in the database.
         </p>
         <form onSubmit={handleGetAllTodos} className="flex gap-2">
-          <button
+          <Button
             type="submit"
             disabled={loading}
-            className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400 w-full"
+            className="w-full"
           >
             {loading ? "Fetching..." : "Fetch All Todos"}
-          </button>
+          </Button>
         </form>
 
         <p className="text-sm text-muted-foreground">
@@ -79,13 +80,13 @@ export default function ServerExamplePage() {
             placeholder="Enter email of user to impersonate"
             required
           />
-          <button
+          <Button
             type="submit"
             disabled={loading}
-            className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-400 w-full"
+            className="w-full"
           >
             {loading ? "Fetching..." : "Fetch All Todos (impersonated)"}
-          </button>
+          </Button>
         </form>
 
         {error && <div className="text-red-500">{error}</div>}

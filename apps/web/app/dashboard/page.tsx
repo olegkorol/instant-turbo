@@ -2,6 +2,7 @@
 
 import { db, id } from "@repo/idb/client";
 import { ButtonBack } from "@repo/ui/button-back";
+import { Button } from "@/components/ui/button";
 import type { Todo, User } from "@repo/idb/types";
 
 function Dashboard() {
@@ -17,12 +18,12 @@ function Dashboard() {
       <div className="max-w-sm w-full space-y-4 mb-4">
         <ButtonBack />
         <p className="text-lg font-bold">Hello, {user!.email}!</p>
-        <button
+        <Button
           onClick={() => db.auth.signOut()}
-          className="px-3 py-1 bg-blue-600 text-white font-bold hover:bg-blue-700 w-full"
+          className="w-full"
         >
           Sign out
-        </button>
+        </Button>
       </div>
 
       <h2 className="tracking-wide text-5xl text-gray-300">my todos</h2>
@@ -94,14 +95,14 @@ function ChevronDownIcon() {
 function TodoForm({ todos, user }: { todos: Todo[]; user: User }) {
   return (
     <div className="flex items-center h-10 border-b border-gray-300">
-      <button
-        className="h-full px-2 border-r border-gray-300 flex items-center justify-center"
+      <Button
         onClick={() => toggleAll(todos)}
+        variant="outline"
       >
         <div className="w-5 h-5">
           <ChevronDownIcon />
         </div>
-      </button>
+      </Button>
       <form
         className="flex-1 h-full"
         onSubmit={(e) => {
@@ -146,12 +147,12 @@ function TodoList({ todos }: { todos: Todo[] }) {
                 <span>{todo.text}</span>
               )}
             </div>
-            <button
-              className="h-full px-2 flex items-center justify-center text-gray-300 hover:text-gray-500"
+            <Button
               onClick={() => deleteTodo(todo)}
+              variant="ghost"
             >
               X
-            </button>
+            </Button>
           </div>
         );
       })}
