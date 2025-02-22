@@ -3,7 +3,11 @@
 A starter Turborepo with two apps:
 
 - Web: [Next.js](https://nextjs.org/)
-- Mobile: **WIP** [React Native](https://reactnative.dev/) with [Expo](https://expo.dev/)
+  - TailwindCSS v4
+  - Shadcn UI
+- Mobile: [React Native](https://reactnative.dev/) with [Expo](https://expo.dev/)
+  - NativeWind
+  - RN Reusables
 
 It uses [TailwindCSS v4](https://tailwindcss.com/) for styling and [InstantDB](https://www.instantdb.com/) as a local-first, reactive database.
 
@@ -16,6 +20,8 @@ pnpm install && pnpm build
 pnpm dev
 ```
 
+The web app should be available at [http://localhost:3000](http://localhost:3000) and for the mobile app, you'll need to choose the platform you want to run the app on in the terminal.
+
 ## What's inside?
 
 This Turborepo includes the following packages/apps:
@@ -23,6 +29,7 @@ This Turborepo includes the following packages/apps:
 ### Apps and Packages
 
 - `web`: a [Next.js](https://nextjs.org/) app
+- `mobile`: a [React Native](https://reactnative.dev/) app with [Expo](https://expo.dev/)
 - `@repo/idb`: instantDB browser and server clients
 - `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
