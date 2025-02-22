@@ -7,7 +7,7 @@ type TodoWithOwner = Todo & { owner: $User | undefined };
 
 // We directly use the admin SDK to access the database, bypassing the permission checks.
 export async function getAllTodos(): Promise<TodoWithOwner[]> {
-  const { todos } = await db.query({ todos: { owner: {} } });
+  const { todos } = await db.query({ todos: { owner: {} } }) as { todos: TodoWithOwner[] };
   return todos;
 }
 
@@ -19,6 +19,6 @@ export async function getTodosAsUser({
 }): Promise<TodoWithOwner[]> {
   const { todos } = await db
     .asUser({ email: impersonateAs })
-    .query({ todos: { owner: {} } });
+    .query({ todos: { owner: {} } }) as { todos: TodoWithOwner[] };
   return todos;
 }
