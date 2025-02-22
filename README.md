@@ -1,25 +1,19 @@
 # instant-turbo
 
-A starter Turborepo with Next.js, TailwindCSS and instantDB.
+A starter Turborepo with two apps:
 
-> Note: This is a work in progress.
+- Web: [Next.js](https://nextjs.org/)
+- Mobile: **WIP** [React Native](https://reactnative.dev/) with [Expo](https://expo.dev/)
 
-## Roadmap
+It uses [TailwindCSS](https://tailwindcss.com/) for styling and [InstantDB](https://www.instantdb.com/) as a local-first, reactive database.
 
-- [x] Add instantDB to the monorepo (simplest way possible)
-  - [ ] Add simple todo-list example
-  - [x] Expose an admin instantDB instance for server-side actions / api routes
-  - [ ] Ensure type-safety across frontend and backend
-- [x] Add TailwindCSS to the Next.js apps
-- [ ] Create turbo generators for new apps and packages
-- [ ] etc.
-
-## Using this example
+## Quickstart
 
 Run the following command:
 
 ```sh
-pnpm install && pnpm dev
+pnpm install && pnpm build
+pnpm dev
 ```
 
 ## What's inside?
@@ -28,7 +22,7 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `web`: another [Next.js](https://nextjs.org/) app
+- `web`: a [Next.js](https://nextjs.org/) app
 - `@repo/idb`: instantDB browser and server clients
 - `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
@@ -58,6 +52,7 @@ pnpm build
 To develop all apps and packages, run the following command:
 
 ```sh
+pnpm build
 pnpm dev
 ```
 

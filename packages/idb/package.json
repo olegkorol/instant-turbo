@@ -35,7 +35,8 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "@instantdb/admin": "^0.17.12",
-    "@instantdb/react": "^0.17.12"
+    "@instantdb/admin": "^0.17.21",
+    "@instantdb/core": "^0.17.21",
+    "@instantdb/react": "^0.17.21"
   }
 }

@@ -111,6 +111,9 @@ importers:
       '@instantdb/admin':
         specifier: ^0.17.12
         version: 0.17.12
+      '@instantdb/core':
+        specifier: ^0.17.21
+        version: 0.17.21
       '@instantdb/react':
         specifier: ^0.17.12
         version: 0.17.12(react@19.0.0)
@@ -358,6 +361,9 @@ packages:
 
   '@instantdb/core@0.17.12':
     resolution: {integrity: sha512-YBcuTn+OoFIcnFam3HwsKffk1kvpLRSbdGMasrersRDpaG4dDr8N0a6jeVYRUhjSL734zm/hVkv/yG0pevVT3A==}
+
+  '@instantdb/core@0.17.21':
+    resolution: {integrity: sha512-iYauRnK607AQIlWkeCI4vDCXnaI0k4HQOEvJOoWFZE4OBsCwtgY+58BXjQPZg4aJvISMhy9IYEibJwalxYyo1Q==}
 
   '@instantdb/react@0.17.12':
     resolution: {integrity: sha512-igXB0ceqV7z7fS8RnHLHuNqtPufL5yLI9jZ+uNW0Sz/lYA2BErFyuAU5/EbiH5K1IvLPZMEfLWOMNni7gfbMYg==}
@@ -2564,6 +2570,11 @@ snapshots:
       '@instantdb/core': 0.17.12
 
   '@instantdb/core@0.17.12':
+    dependencies:
+      mutative: 1.1.0
+      uuid: 9.0.1
+
+  '@instantdb/core@0.17.21':
     dependencies:
       mutative: 1.1.0
       uuid: 9.0.1
