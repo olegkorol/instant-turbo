@@ -1,5 +1,7 @@
 # instant-turbo
 
+> Archived. It makes little sense to work with Turborepo. The added headaches and complexity are just not worth it. You are better off separating the React Native and the Expo app in two different repos.
+
 A starter Turborepo with two apps:
 
 - Web: [Next.js](https://nextjs.org/)
